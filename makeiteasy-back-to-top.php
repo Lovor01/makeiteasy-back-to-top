@@ -26,5 +26,6 @@
  */
 function create_block_makeiteasy_back_to_top_block_init() {
 	register_block_type( __DIR__ . '/build' );
+	wp_set_script_translations( 'makeiteasy-back-to-top-editor-script', 'makeiteasy-back-to-top' );
 }
 add_action( 'init', 'create_block_makeiteasy_back_to_top_block_init' );
