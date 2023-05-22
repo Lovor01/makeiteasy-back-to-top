@@ -1,6 +1,6 @@
 === Makeiteasy Back To Top ===
 Contributors:      lovor
-Tags:              back to top, scroll to top, back to top block, scroll up, back top button, scroll top button, easy, block, button
+Tags:              back to top, block, scroll to top, back to top block, scroll up, back top button, scroll top button, easy, button
 Tested up to:      6.2
 Stable tag:        1.0.0
 License:           GPL-2.0-or-later
