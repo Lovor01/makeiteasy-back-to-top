@@ -1,0 +1,23 @@
+.wp-block-makeiteasy-back-to-top {
+	visibility: visible;
+	bottom: auto;
+	right: auto;
+	z-index: auto;
+
+	&.wp-block-makeiteasy-back-to-top {
+		opacity: var(--makeiteasy-back-to-top-opacity, 0.75);
+	}
+
+	.wp-block-button__link img {
+		display: inline-block;
+	}
+
+	@at-root .editor-styles-wrapper & .wp-block-button__link {
+		line-height: 1;
+		padding: calc(0.667em + 2px) calc(0.7em + 2px);
+	}
+
+	.shorter-input-box {
+		width: 6ch;
+	}
+}

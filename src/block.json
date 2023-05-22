@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "makeiteasy/back-to-top",
+	"title": "Back to top",
+	"description": "Back to top button",
+	"category": "widgets",
+	"version": "0.1.0",
+	"icon": "coffee",
+	"supports": {
+		"multiple": false,
+		"align": true,
+		"ariaLabel": true
+	},
+	"textdomain": "makeiteasy-back-to-top",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./front-back-to-top.js",
+	"example": {},
+	"attributes": {
+		"smoothScroll": {
+			"type": "boolean",
+			"default": false
+		},
+		"opacity": {
+			"type": "number",
+			"default": 0.7
+		},
+		"position": {
+			"type": "object",
+			"default": {
+				"x": "30px",
+				"y": "30px",
+				"anchor": ["right", "bottom"]
+			}
+		},
+		"transitionDuration": {
+			"type": "string",
+			"default": "0.3s"
+		},
+		"enableOnDesktop": {
+			"type": "boolean",
+			"default": true
+		},
+		"breakPointMobileDesktop": {
+			"type": "number",
+			"default": 768
+		}
+	}
+}
