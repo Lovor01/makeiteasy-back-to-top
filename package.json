@@ -1,6 +1,6 @@
 {
 	"name": "makeiteasy-back-to-top",
-	"version": "0.1.0",
+	"version": "1.0.0",
 	"description": "Example block written with ESNext standard and JSX support – build step required.",
 	"author": "The WordPress Contributors",
 	"license": "GPL-2.0-or-later",
@@ -16,6 +16,6 @@
 		"start hot": "wp-scripts start --hot"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.3.0"
+		"@wordpress/scripts": "^26.6.0"
 	}
 }

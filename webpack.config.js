@@ -1,3 +1,6 @@
+/**
+ * Build includes assets copying, hence default @wordpress/scripts config is modified
+ */
 const CopyWebpackPlugin = require( 'copy-webpack-plugin' );
 
 // change webpack default config

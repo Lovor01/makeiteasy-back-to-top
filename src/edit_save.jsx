@@ -98,13 +98,15 @@ export const Edit = ({
 							setAttributes({ transitionDuration })
 						}
 						value={transitionDuration}
-						label={__("Duration of appearance", "makeiteasy-back-to-top")}
+						label={__("Duration", "makeiteasy-back-to-top")}
 						units={[
 							{ value: "s", label: "s", default: 0.3 },
 							{ value: "ms", label: "ms", default: 300 },
 						]}
 						isResetValueOnUnitChange={true}
 						className="makeiteasy-shorter-input-box"
+						title="How long does it take for block to appear"
+						help="Appearance duration"
 					/>
 				</PanelRow>
 			</PanelBody>
@@ -117,6 +119,7 @@ export const Edit = ({
 							"from right",
 							"makeiteasy-back-to-top"
 						)}
+						className="makeiteasy-shorter-input-box"
 					/>
 				</PanelRow>
 				<PanelRow>
@@ -127,6 +130,7 @@ export const Edit = ({
 							"from bottom",
 							"makeiteasy-back-to-top"
 						)}
+						className="makeiteasy-shorter-input-box"
 					/>
 				</PanelRow>
 			</PanelBody>

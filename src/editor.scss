@@ -3,9 +3,15 @@
 	bottom: auto;
 	right: auto;
 	z-index: auto;
+	display: flex;
+	justify-content: flex-end;
 
 	&.wp-block-makeiteasy-back-to-top {
 		opacity: var(--makeiteasy-back-to-top-opacity, 0.75);
+	}
+
+	> .block-editor-block-list__block {
+		right: var(--makeiteasy-back-to-top-right);
 	}
 
 	.wp-block-button__link img {
@@ -16,8 +22,12 @@
 		line-height: 1;
 		padding: calc(0.667em + 2px) calc(0.7em + 2px);
 	}
+}
 
-	.shorter-input-box {
-		width: 6ch;
+.makeiteasy-shorter-input-box {
+	.components-input-control__container {
+		width: 13ch;
 	}
+
+
 }
