@@ -6,7 +6,7 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Makeiteasy Back To Top
- * Description:       Back to top element
+ * Description:       Back to top block
  * Requires at least: 5.9
  * Requires PHP:      7.4
  * Version:           1.0.0
