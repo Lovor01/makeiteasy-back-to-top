@@ -32,7 +32,7 @@
 			"default": {
 				"x": "30px",
 				"y": "30px",
-				"anchor": ["right", "bottom"]
+				"anchor": [ "right", "bottom" ]
 			}
 		},
 		"transitionDuration": {
@@ -46,6 +46,10 @@
 		"breakPointMobileDesktop": {
 			"type": "number",
 			"default": 768
+		},
+		"goToBottom": {
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

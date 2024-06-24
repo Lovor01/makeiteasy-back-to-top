@@ -1,22 +1,49 @@
-=== Makeiteasy Back To Top ===
+=== MakeITeasy Back To Top ===
 Contributors:      lovor
-Tags:              back to top, block, scroll to top, back to top block, scroll up, back top button, scroll top button, easy, button
-Tested up to:      6.2.2
-Stable tag:        1.0.0
+Tags:              back to top, scroll to top, back to top button, scroll to top button, back to top block
+Tested up to:      6.5.2
+Stable tag:        1.1.1
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
-Entirely block based back to top button.
+Block based back to top. Lightweight, no dependencies, customizable and with some advanced options.
+Based on best block development practices.
 
 == Description ==
 
-Very customizable and lightweight back to top 🔼 solution.
+Very customizable and lightweight back to top 🔝 solution.
 
 Fully compatible with [Full Site Editing](https://developer.wordpress.org/block-editor/getting-started/full-site-editing/) themes and with classic themes if block editor is enabled.
 
 #### How this differs from other similar plugins?
 
 This is a block, inside which you can insert any other block. This makes it utmost customizable. By default, a button block with inline image is inserted, but you can remove it and insert any other block you wish or customize default button or insert your own image. As button is a normal WordPress block, you can customize it like you would normally do, pick background color or foreground color from sidebar, choose border radius for edges, or anything else which is customizable in block editor.
+
+#### Features (block editor sidebar)
+
+- In the block sidebar, it is possible to choose if the block will appear both on desktop and mobile variant of page and breakpoint between the two.
+- Choose page scroll mode when clicked on button: smooth or instant.
+- Opacity of the block.
+- Duration of slow appearance ("fade in").
+- Position of the block from bottom right corner of the browser window, in css unit by choice.
+- Go to bottom functionality.
+
+== NEW! ==
+
+##### How to use TEST PREVIEW
+
+There is a test preview button now. Although, to get this working, a little effort is needed. These are the steps:
+
+- Login with suggested name and password
+- Site opens in site editor mode. Navigate to Patterns and then to template parts. Click on Footer in the Menu and then click on Footer in the box on the right side to edit it.
+- Insert "Back to top" block in the footer group block (outer group block, as there are two), as the last element of group. If you insert it outside, it may appear very wide. If you inserted it in the wrong place, correct it by moving the block to position.
+- Set block alignment to right if you want it at the right side. Be carefull to set "Back to top"'s block alignment, not alignment of the inner button.
+- You can also activate "go to bottom" functionality in the block settings sidebar to try this.
+- Save and navigate to front page. It should work.
+
+#### Go to bottom
+
+Introduced go to bottom functionality - can be turned on in block sidebar (off by default). When user scrolls down button flips down ⬇ and leads to bottom of page, when scrolled up it flips up ⬆ and leads to top of page.
 
 == Installation ==
 
@@ -43,8 +70,25 @@ Yes, but see above notes.
 
 == Screenshots ==
 
+1. Desktop post
+2. Mobile post
+3. Full site editing - footer
 
 == Changelog ==
+
+= 1.1.1 =
+
+Update incorrect description how to insert block in footer in classic theme. Added example for GeneratePress theme.
+Fixed block to appear on right side in editor while classic theme is active.
+Fixed Go to bottom function not working in some instances.
+
+= 1.1.0 =
+
+Introduced option "Go to bottom"
+
+= 1.0.1 =
+
+* Fix for incorrect alt attribute on inline image inside button on default template - thanks @thisbit (Elvis Krstulović) for testing and spotting.
 
 = 1.0.0 =
 
@@ -62,12 +106,24 @@ The best way to use plugin is using [full site editing theme](https://fullsiteed
 
 #### Classic themes
 
-As mentioned above, adding this block to page will show it only on this page. To show it on many/all pages, you have to add it to footer (or header). You can do so by creating block on one of the pages and copy its code (copy option from block menu). Then, add `do_blocks($content);` line in your footer (header) php template, where you replace $content with copied block content. Content must be between single quotes, as it is string, according to rules of PHP.
+As mentioned above, adding this block to page will show it only on this page. To show it on many/all pages, you have to add it to footer (or header). You can do so by creating block on one of the pages and copy its code (copy option from block menu). Then, add `echo do_blocks($content);` line in your footer (header) php template, where you replace $content with copied block content string. Content must be between single quotes, as it is string, according to rules of PHP. Or even better, use [nowdoc](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.nowdoc) syntax.
+Example for theme [GeneratePress](https://wordpress.org/themes/generatepress/):
 
-#### Features (block editor sidebar)
+First create child theme, so your code is not overwritten by theme updates. Then in footer.php, after line 13 of original footer.php of theme insert following code:
 
-- In the block sidebar, it is possible to choose if the block will appear both on desktop and mobile variant of page and breakpoint between the two.
-- Choose page scroll mode when clicked on button: smoothly or instantly.
-- Opacity of the block.
-- Duration of slow appearance ("fade in").
-- Position of the block from bottom right corner of the browser window, in css unit by choice.
+`
+echo do_blocks(
+	<<<'block'
+	<!-- wp:makeiteasy/back-to-top -->
+		<div id="makeiteasy-back-to-top" data-smooth-scroll="false" data-enable-on-desktop="true" data-break-point-mobile-desktop="768" data-go-to-bottom="true" style="--makeiteasy-back-to-top-opacity:0.7;--makeiteasy-back-to-top-visibility-transition-duration:0.3s;--makeiteasy-back-to-top-right:30px;--makeiteasy-back-to-top-bottom:30px" class="wp-block-makeiteasy-back-to-top"><!-- wp:button {"style":{"spacing":{"padding":{"top":"12px","right":"12px","bottom":"12px","left":"12px"}},"border":{"radius":"9px"}}} -->
+		<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" style="border-radius:9px;padding-top:12px;padding-right:12px;padding-bottom:12px;padding-left:12px"><img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCA5NiA0ODAgMjgzIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Im00MyAzNzktNDMtNDMgMjQwLTI0MCAyNDAgMjQwLTQzIDQzLTE5Ny0xOTd6IiBmaWxsPSIjZmZmIi8+PC9zdmc+Cg==" alt="Back to top arrow" width="24" height="24"></a></div>
+		<!-- /wp:button --></div>
+	<!-- /wp:makeiteasy/back-to-top -->
+	block
+);
+`
+
+*Important note:*
+
+If you install block through block editor, and after creating block, you copy block code to footer and delete original block in page, plugin will be automatically uninstalled. This is handled by WordPress.
+Therefore, if you are using classic theme and you will use block code only in PHP, either install plugin in a classic way through plugins page or keep one copy of block active somewhere (e.g dummy draft page), to prevent automatic uninstall.

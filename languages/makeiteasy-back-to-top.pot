@@ -1,4 +1,4 @@
-# Copyright (C) 2023 The WordPress Contributors
+# Copyright (C) 2023 Lovro Hrust
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-05-22T10:54:46+00:00\n"
+"POT-Creation-Date: 2023-06-16T16:43:13+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.7.1\n"
 "X-Domain: makeiteasy-back-to-top\n"
@@ -19,11 +19,11 @@ msgid "Makeiteasy Back To Top"
 msgstr ""
 
 #. Description of the plugin
-msgid "Back to top element"
+msgid "Back to top block"
 msgstr ""
 
 #. Author of the plugin
-msgid "The WordPress Contributors"
+msgid "Lovro Hrust"
 msgstr ""
 
 #: build/index.js:1
@@ -72,28 +72,28 @@ msgstr ""
 
 #: build/index.js:1
 #: src/edit_save.jsx:101
-msgid "Duration of appearance"
+msgid "Duration"
 msgstr ""
 
 #: build/index.js:1
-#: src/edit_save.jsx:116
+#: src/edit_save.jsx:118
 msgid "from right"
 msgstr ""
 
 #: build/index.js:1
-#: src/edit_save.jsx:126
+#: src/edit_save.jsx:129
 msgid "from bottom"
 msgstr ""
 
 #: build/index.js:1
 #: src/.old/edit_save-alternative-style-solution.jsx:89
-#: src/edit_save.jsx:151
+#: src/edit_save.jsx:155
 msgid "Back to top arrow"
 msgstr ""
 
 #: build/index.js:1
 #: src/.old/edit_save-alternative-style-solution.jsx:90
-#: src/edit_save.jsx:155
+#: src/edit_save.jsx:159
 msgid "Back to top"
 msgstr ""
 

@@ -1,0 +1,30 @@
+{
+	"smoothScroll": {
+		"type": "boolean",
+		"default": false
+	},
+	"opacity": {
+		"type": "number",
+		"default": 0.7
+	},
+	"position": {
+		"type": "object",
+		"default": {
+			"x": "30px",
+			"y": "30px",
+			"anchor": ["right", "bottom"]
+		}
+	},
+	"transitionDuration": {
+		"type": "string",
+		"default": "0.3s"
+	},
+	"enableOnDesktop": {
+		"type": "boolean",
+		"default": true
+	},
+	"breakPointMobileDesktop": {
+		"type": "number",
+		"default": 768
+	}
+}

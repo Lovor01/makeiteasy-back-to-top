@@ -11,7 +11,6 @@ $visibility-class: makeiteasy-back-to-top-visible;
 	z-index: 10000;
 
 	&.wp-block-makeiteasy-back-to-top {
-		margin-left: 0;
 		min-width: 0;
 	}
 
@@ -27,5 +26,13 @@ $visibility-class: makeiteasy-back-to-top-visible;
 		img {
 			display: block;
 		}
+	}
+
+	transform: rotateX(0deg);
+	transition: transform 0.3s;
+
+	// if go to bottom option is enabled
+	&.makeiteasy-back-to-top-down {
+		transform: rotateX(180deg);
 	}
 }
