@@ -1,6 +1,6 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
-	"apiVersion": 2,
+	"apiVersion": 3,
 	"name": "makeiteasy/back-to-top",
 	"title": "Back to top",
 	"description": "Back to top button",
@@ -32,7 +32,10 @@
 			"default": {
 				"x": "30px",
 				"y": "30px",
-				"anchor": [ "right", "bottom" ]
+				"anchor": [
+					"right",
+					"bottom"
+				]
 			}
 		},
 		"transitionDuration": {

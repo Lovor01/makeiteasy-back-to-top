@@ -1,8 +1,8 @@
 === MakeITeasy Back To Top ===
 Contributors:      lovor
 Tags:              back to top, scroll to top, back to top button, scroll to top button, back to top block
-Tested up to:      6.5.2
-Stable tag:        1.1.1
+Tested up to:      6.5.5
+Stable tag:        1.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,12 +30,15 @@ This is a block, inside which you can insert any other block. This makes it utmo
 
 == NEW! ==
 
-##### How to use TEST PREVIEW
+##### TEST IN WORDPRESS PLAYGROUND
 
-There is a test preview button now. Although, to get this working, a little effort is needed. These are the steps:
+Open following link: https://playground.wordpress.net/?plugin=makeiteasy-back-to-top&login=yes
 
-- Login with suggested name and password
-- Site opens in site editor mode. Navigate to Patterns and then to template parts. Click on Footer in the Menu and then click on Footer in the box on the right side to edit it.
+To get this working, a little effort is needed. These are the steps:
+
+- Enter the admin area
+- Open site editor (Edit site in admin toolbar)
+- On the left sidebar, in AREAS, find Footer
 - Insert "Back to top" block in the footer group block (outer group block, as there are two), as the last element of group. If you insert it outside, it may appear very wide. If you inserted it in the wrong place, correct it by moving the block to position.
 - Set block alignment to right if you want it at the right side. Be carefull to set "Back to top"'s block alignment, not alignment of the inner button.
 - You can also activate "go to bottom" functionality in the block settings sidebar to try this.
@@ -75,6 +78,10 @@ Yes, but see above notes.
 3. Full site editing - footer
 
 == Changelog ==
+
+= 1.2.0 =
+
+Block updated to v3 API
 
 = 1.1.1 =
 

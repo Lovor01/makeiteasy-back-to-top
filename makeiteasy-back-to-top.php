@@ -7,9 +7,9 @@
  * @wordpress-plugin
  * Plugin Name:       Makeiteasy Back To Top
  * Description:       Back to top block
- * Requires at least: 5.9
+ * Requires at least: 6.0
  * Requires PHP:      7.4
- * Version:           1.1.1
+ * Version:           1.2.0
  * Author:            Lovro Hrust
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
