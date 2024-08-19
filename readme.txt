@@ -1,7 +1,9 @@
 === MakeITeasy Back To Top ===
 Contributors:      lovor
+Donate link:       https://buymeacoffee.com/lovro
 Tags:              back to top, scroll to top, back to top button, scroll to top button, back to top block
-Tested up to:      6.5.5
+Requires at least: 6.5
+Tested up to:      6.6
 Stable tag:        1.2.0
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
