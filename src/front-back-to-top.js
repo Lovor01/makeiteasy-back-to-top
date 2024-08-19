@@ -3,8 +3,7 @@
  */
 'use strict';
 
-let currentlyInScrollThrottle = false,
-	backToTopButton,
+let backToTopButton,
 	// @param true or false
 	backToTopVisible,
 	breakPointMobileDesktop,
@@ -14,51 +13,68 @@ let currentlyInScrollThrottle = false,
 	isGoToBottom;
 
 /**
- * Appear back to top upon scrolling half of screen height
- * Reverse it (go to  bottom) if option is enabled
+ * throttle function with additional last call
+ *
+ * @param {Function} callback
+ * @return {Function} - debounced function
  */
-function onScrollFn () {
-	const positiveToTrue = ( arg ) => Math.sign(arg) >= 0 ? true : false;
+const throttleWithAfterCall = ( callback ) => {
+	let timeoutId = null;
+	return ( ...args ) => {
+		if ( timeoutId === null ) {
+			// enable this for immediate call and aftercall
+			// callback( ...args );
+			timeoutId = setTimeout( () => {
+				callback( ...args );
+				timeoutId = null;
+			}, 150 );
+		}
+	};
+};
+
+/**
+ * Appear back to top upon scrolling half of screen height
+ * Reverse it (go to bottom) if option is enabled
+ * Change button to up if it is scrolled to bottom of page
+ */
+function onScrollFn() {
+	const positiveToTrue = ( arg ) => Math.sign( arg ) >= 0 ? true : false;
 
 	const pxScreenHeight = window.innerHeight;
 	const token = 'makeiteasy-back-to-top-visible';
-	if ( ! currentlyInScrollThrottle ) {
-		currentlyInScrollThrottle = true;
-		const scrollPosition = window.scrollY;
-		if (
-			( scrollPosition > pxScreenHeight / 2 && ! backToTopVisible ) ||
+
+	const scrollPosition = window.scrollY;
+	if (
+		( scrollPosition > pxScreenHeight / 2 && ! backToTopVisible ) ||
 			( scrollPosition < pxScreenHeight / 2 && backToTopVisible )
-		)
-			backToTopVisible = backToTopButton.classList.toggle( token );
+	)
+		backToTopVisible = backToTopButton.classList.toggle( token );
 
-		if (isGoToBottom) {
-			const scrollDifference = scrollPosition - lastScrollPosition;
+	// subtract 10 px to account for possible rounding of pixels
+	const isAtBottomOfScreen = document.documentElement.clientHeight + ( document.documentElement.scrollTop || document.body.scrollTop ) >= document.documentElement.scrollHeight - 10;
+	if ( isGoToBottom ) {
+		const scrollDifference = scrollPosition - lastScrollPosition;
 
-			// only act if user has scrolled a little
-			if ( Math.abs( scrollDifference ) > 20 ) {
-				const orientationDown = positiveToTrue( scrollDifference );
-				// add orientation property to button in order not to lose it
-				if ( backToTopButton.orientationDown !== orientationDown ) {
-					backToTopButton.orientationDown = orientationDown;
-					// add makeiteasy-back-to-top-down class if scrolling is down
-					backToTopButton.classList.toggle( 'makeiteasy-back-to-top-down', orientationDown);
-				}
+		// only act if user has scrolled a little or at bottom
+		if ( Math.abs( scrollDifference ) > 20 || isAtBottomOfScreen ) {
+			const orientationDown = positiveToTrue( scrollDifference ) && ! isAtBottomOfScreen;
+			// add orientation property to button in order not to lose it
+			if ( backToTopButton.orientationDown !== orientationDown ) {
+				backToTopButton.orientationDown = orientationDown;
+				// add makeiteasy-back-to-top-down class if scrolling is down
+				backToTopButton.classList.toggle( 'makeiteasy-back-to-top-down', orientationDown );
 			}
-			lastScrollPosition = scrollPosition;
 		}
-		window.setTimeout( () => {
-			currentlyInScrollThrottle = false;
-		}, 150 );
+		lastScrollPosition = scrollPosition;
 	}
 }
 
 function initialize() {
-	currentlyInScrollThrottle = false;
 	backToTopButton = document.querySelector( '#makeiteasy-back-to-top' );
-	isGoToBottom = backToTopButton.dataset.goToBottom === 'true'
+	isGoToBottom = backToTopButton.dataset.goToBottom === 'true';
 	backToTopVisible = false;
 	onScrollFn();
-	window.addEventListener( 'scroll', onScrollFn );
+	window.addEventListener( 'scroll', throttleWithAfterCall( onScrollFn ) );
 	backToTopButton.addEventListener( 'click', () => {
 		if ( backToTopButton.orientationDown )
 			window.scrollTo( 0, document.body.scrollHeight );
