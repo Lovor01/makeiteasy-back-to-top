@@ -30,11 +30,11 @@ This is a block, inside which you can insert any other block. This makes it utmo
 - Position of the block from bottom right corner of the browser window, in css unit by choice.
 - Go to bottom functionality.
 
-== NEW! ==
+== DEMO ==
 
-##### TEST IN WORDPRESS PLAYGROUND
+#### Test in wordpress playground
 
-Open following link: https://playground.wordpress.net/?plugin=makeiteasy-back-to-top&login=yes
+Choose "Live preview" button in top left area of screen.
 
 To get this working, a little effort is needed. These are the steps:
 
@@ -45,6 +45,8 @@ To get this working, a little effort is needed. These are the steps:
 - Set block alignment to right if you want it at the right side. Be carefull to set "Back to top"'s block alignment, not alignment of the inner button.
 - You can also activate "go to bottom" functionality in the block settings sidebar to try this.
 - Save and navigate to front page. It should work.
+
+Or, alternatively, try demo of my popup block, where everything is already set up and also back to top button is showcased: [MakeITeasy popup](https://wordpress.org/plugins/makeiteasy-popup/?preview=1)
 
 #### Go to bottom
 
@@ -65,6 +67,11 @@ You can install the plugin in usual way, however, the easiest way to get it is i
 
 You can use everything block editor provides.
 
+= Can I insert my own icon inside the button? =
+
+Yes, one way to do it is to use "Inline image" feature of the button block. If you want to put SVG image, you should one of plugins for SVG sanitization,
+as SVG's are not by default allowed in WordPress because of security issues (JavaScript code may be embedded in SVG).
+
 = Can I insert any custom block or pattern and keep back to top functionality? =
 
 Yes, but you should take care to preserve accessibility. Button is the best element, since button is accessible HTML element and it is clear that it gives some action.
@@ -80,6 +87,10 @@ Yes, but see above notes.
 3. Full site editing - footer
 
 == Changelog ==
+
+= 1.2.1 =
+
+Added automatic change to "go to top" (flip of the block) from "go to bottom" mode if bottom of page is reached.
 
 = 1.2.0 =
 
@@ -101,7 +112,13 @@ Introduced option "Go to bottom"
 
 = 1.0.0 =
 
-* Release
+* Initial release
+
+== Upgrade Notice ==
+
+= 1.2.1 =
+
+Feature added
 
 == Usage ==
 
@@ -136,3 +153,9 @@ echo do_blocks(
 
 If you install block through block editor, and after creating block, you copy block code to footer and delete original block in page, plugin will be automatically uninstalled. This is handled by WordPress.
 Therefore, if you are using classic theme and you will use block code only in PHP, either install plugin in a classic way through plugins page or keep one copy of block active somewhere (e.g dummy draft page), to prevent automatic uninstall.
+
+== Developers ==
+
+= Github repository =
+
+[https://github.com/Lovor01/makeiteasy-back-to-top](https://github.com/Lovor01/makeiteasy-back-to-top)
